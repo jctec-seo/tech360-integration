@@ -14,3 +14,7 @@ mkdir $PROJECT_DIR
 # -=-=-=-=-=-=--=- lighthouse
 echo "[INFO] Going to install lighthouse"
 npm install -g lighthouse
+
+# -=-=-=-=-=-=--=- webpagetest
+echo "[INFO] Going to install webpagetest"
+npm install -g webpagetest

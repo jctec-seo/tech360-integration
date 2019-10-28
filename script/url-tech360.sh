@@ -47,4 +47,5 @@ mkdir $CURRENT_PATH/$PROJECT_DIR/$title
 
 echo "[INFO] created dir $CURRENT_PATH/$PROJECT_DIR/$title"
 
-open ./mac-techseo360-files/TechSEO360.app --args ":${CURRENT_PATH}/${PROJECT_DIR}/${title}/tech360" @override_rootpath=$url@ -exit  -scan -save -autocreate -exportexternalcsv -exportinternalcsv @override_initfromproject=${CURRENT_PATH}/defaultTec360.ini@
+# open ./mac-techseo360-files/TechSEO360.app --args ":${CURRENT_PATH}/${PROJECT_DIR}/${title}/tech360" @override_rootpath=$url@ -exit  -scan -save -autocreate -exportexternalcsv -exportinternalcsv @override_initfromproject=${CURRENT_PATH}/defaultTec360.ini@
+open ./mac-techseo360-files/TechSEO360.app --args ":${CURRENT_PATH}/${PROJECT_DIR}/${title}/tech360" @override_rootpath=$url@ -exit  -scan -save -hide -autocreate -exportexternalcsv -exportinternalcsv @override_initfromproject=${CURRENT_PATH}/defaultTec360.ini@

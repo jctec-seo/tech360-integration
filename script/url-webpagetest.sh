@@ -44,11 +44,9 @@ fi
 printf "[INFO] Argument title is: %s\n" "$title"
 #-=-=-=-=-=-= end validate all var -=-=-=-=-=-=
 
-# lighthouse $url --quiet --chrome-flags="--headless" --verbose --output json html --save-assets  -GA
+mkdir ${CURRENT_PATH}/${PROJECT_DIR}/${title}/webpagetest
+cd ${CURRENT_PATH}/${PROJECT_DIR}/${title}/webpagetest
 
-mkdir ${CURRENT_PATH}/${PROJECT_DIR}/${title}/lighthouse
-cd ${CURRENT_PATH}/${PROJECT_DIR}/${title}/lighthouse
-
+echo "[INFO] goint to execute : $ webpagetest test $url --key $WEBPAGETEST_API_KEY --poll 5 --timeout 120 > result.json"
 # lighthouse $url --quiet --chrome-flags="--headless" --output json html --save-assets  -GA
-echo "[INFO] goint to execute : lighthouse $url --quiet --chrome-flags="--headless" --output json html --save-assets  -GA"
-lighthouse $url --quiet --chrome-flags="--headless" --output json html --save-assets  -GA
+webpagetest test $url --key $WEBPAGETEST_API_KEY --poll 5 --timeout 120 > result.json
