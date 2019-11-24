@@ -16,9 +16,10 @@ while [ $# -gt 0 ]; do
   shift
 done
 
-# bash script/url-tech360.sh --url=${url} --title=${title}
-# bash script/url-lighthouse.sh --url=${url} --title=${title}
-# bash script/url-webpagetest.sh  --url=${url} --title=${title}
+
+bash script/url-tech360.sh --url=${url} --title=${title}
+bash script/url-lighthouse.sh --url=${url} --title=${title}
+bash script/url-webpagetest.sh  --url=${url} --title=${title}
 
 # screenshot
 projectDir="./seo-projects/${title}/tech360/"
