@@ -1,3 +1,8 @@
+
+source ./script/config.shlib;
+echo "$(config_get PROJECT_DIR)";
+PROJECT_DIR=$(config_get PROJECT_DIR)
+
 #-=-=-=-=-=-= init arg -=-=-=-=-=-=
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -6,6 +11,9 @@ while [ $# -gt 0 ]; do
       ;;
     --title=*)
       title="${1#*=}"
+      ;;
+    --screenshoot=*)
+      screenshoot="${1#*=}"
       ;;
     *)
       printf "***************************\n"
@@ -17,12 +25,22 @@ while [ $# -gt 0 ]; do
 done
 
 
+
 bash script/url-tech360.sh --url=${url} --title=${title}
 bash script/url-lighthouse.sh --url=${url} --title=${title}
 bash script/url-webpagetest.sh  --url=${url} --title=${title}
 
-# screenshot
-projectDir="./seo-projects/${title}/tech360/"
-csvFile=`ls ${projectDir}| grep internal.csv`
-internalLinkList="./seo-projects/${title}/tech360/${csvFile}"
-python3 pythonScript/screenshoot.py --internalLinkList ${internalLinkList} --title ${title} --projectDir ${projectDir}
+if [ -z "$screenshoot" ]
+then
+  echo "\$screenshoot is empty, skip"
+else
+  # screenshot
+  projectDir="./seo-project/${title}/tech360/"
+  csvFile=`ls ${projectDir}| grep internal.csv`
+  internalLinkList="./seo-project/${title}/tech360/${csvFile}"
+  python3 pythonScript/screenshoot.py --internalLinkList ${internalLinkList} --title ${title} --projectDir ${projectDir}
+fi
+
+aws s3 sync ./${PROJECT_DIR}/${title} s3://${PROJECT_DIR}/${title}
+
+

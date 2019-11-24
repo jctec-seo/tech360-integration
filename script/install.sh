@@ -1,4 +1,4 @@
-PROJECT_DIR="seo-projects"
+PROJECT_DIR="seo-project"
 DOWNLOAD_FILE_NAME="mac-techseo360-files.zip"
 
 # -=-=-=-=-=-=--=- techSEO360

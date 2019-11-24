@@ -8,6 +8,6 @@
 .env.production.local
 env.sh
 
-seo-projects/*
+seo-project/*
 mac-techseo360-files*
 __MACOSX
