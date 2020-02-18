@@ -50,5 +50,5 @@ mkdir ${CURRENT_PATH}/${PROJECT_DIR}/${title}/lighthouse
 cd ${CURRENT_PATH}/${PROJECT_DIR}/${title}/lighthouse
 
 # lighthouse $url --quiet --chrome-flags="--headless" --output json html --save-assets  -GA
-echo "[INFO] goint to execute : lighthouse $url --quiet --chrome-flags="--headless" --output json html --save-assets  -GA"
-lighthouse $url --quiet --chrome-flags="--headless" --output json html --save-assets  -GA
+echo "[INFO] goint to execute : https://lighthouse $url --quiet --chrome-flags="--headless" --output json html --save-assets  -GA"
+lighthouse https://$url --quiet --chrome-flags="--headless" --output json html --save-assets  -GA

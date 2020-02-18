@@ -48,6 +48,6 @@ mkdir ${CURRENT_PATH}/${PROJECT_DIR}/${title}/webpagetest
 cd ${CURRENT_PATH}/${PROJECT_DIR}/${title}/webpagetest
 
 
-echo "[INFO] goint to execute : $ webpagetest test $url --key $WEBPAGETEST_API_KEY --poll 5 --timeout 300 > result.json"
+echo "[INFO] goint to execute : $ webpagetest test $url --key $WEBPAGETEST_API_KEY --poll 5 --timeout 3000 > result.json"
 # lighthouse $url --quiet --chrome-flags="--headless" --output json html --save-assets  -GA
-webpagetest test $url --key $WEBPAGETEST_API_KEY --poll 5 --timeout 300 > result.json
+webpagetest test $url --key $WEBPAGETEST_API_KEY --poll 5 --timeout 3000 > result.json

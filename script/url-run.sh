@@ -1,4 +1,3 @@
-
 source ./script/config.shlib;
 echo "$(config_get PROJECT_DIR)";
 PROJECT_DIR=$(config_get PROJECT_DIR)
@@ -42,5 +41,3 @@ else
 fi
 
 aws s3 sync ./${PROJECT_DIR}/${title} s3://${PROJECT_DIR}/${title}
-
-
